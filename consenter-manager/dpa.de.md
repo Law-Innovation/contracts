@@ -1,3 +1,10 @@
+---
+slug: dpa
+locale: de
+title: Auftragsverarbeitungsvertrag (AVV)
+version: 2026-06
+---
+
 # Auftragsverarbeitungsvertrag (AVV)
 
 **zwischen Consenter und dem Kunden (Website-Anbieter)** **Juni 2026**

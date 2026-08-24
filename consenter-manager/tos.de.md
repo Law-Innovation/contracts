@@ -1,3 +1,10 @@
+---
+slug: tos
+locale: de
+title: Nutzungsbedingungen
+version: 2026-06
+---
+
 # Nutzungsbedingungen
 
 **für die Nutzung des Consenter Managers und des Consenter Cookie Banners (zur Kommunikation mit dem Consenter Einwilligungsagenten)**
