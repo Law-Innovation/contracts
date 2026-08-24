@@ -2,7 +2,7 @@
 slug: dpa
 locale: de
 title: Auftragsverarbeitungsvertrag (AVV)
-version: 2026-06
+version: 2026-07
 ---
 
 # Auftragsverarbeitungsvertrag (AVV)
@@ -253,7 +253,7 @@ Der Auftragsverarbeiter arbeitet fortlaufend an der Entwicklung zunehmend wirksa
 
 **Auftragsverarbeiter** nach Art. 4 Nr. 8 DSGVO und im Sinne dieser Vereinbarung ist die:
 
-Law & Innovation Technology GmbH Jungstr. 29 10247 Berlin
+> Law & Innovation Technology GmbH Jungstr. 29 10247 Berlin
 
 **Name, Funktion und Kontaktdaten der Kontaktperson:** Prof. Dr. Max von Grafenstein, Geschäftsführer [max.grafenstein@law-innovation.tech](mailto:max.grafenstein@law-innovation.tech) Mobil: 0175/9992389
 
@@ -299,28 +299,29 @@ Die Daten werden von AWS gespeichert und verarbeitet. Zahlungsdaten des Verantwo
 
 Die Daten werden so lange gespeichert, bis der Verantwortliche sie ändert oder sein Konto löscht, es sei denn, gesetzliche Vorschriften verlangen eine längere Speicherung der Daten.
 
-### 2\. Wie Einwilligungsdaten in einem Browser-Cookie des Endnutzers verarbeitet werden
+### 2\. Wie Einwilligungsdaten im Browser-Storage des Endnutzers verarbeitet werden
 
-Die Speicherung von Einwilligungsdaten in einem Browser-Cookie des Endnutzers dient dem Zweck, zuvor erteilte und verweigerte Einwilligungen automatisch zu übertragen und anzuwenden, wenn der Endnutzer die Website des Verantwortlichen erneut besucht.
+Die Speicherung von Einwilligungsdaten im Browser-Storage des Endnutzers dient dem Zweck, zuvor erteilte und verweigerte Einwilligungen automatisch zu übertragen und anzuwenden, wenn der Endnutzer die Website des Verantwortlichen erneut besucht.
 
 **2.1 Erfasste personenbezogene Daten**
 
-Einwilligungsdatensätze sind personenbezogene Daten, soweit sie die Einwilligung eines Endnutzers dokumentieren.
+Consent Records sind personenbezogene Daten, soweit sie die Einwilligung eines Endnutzers dokumentieren.
 
-- Enthält eine eindeutige Einwilligungs-ID für den Einwilligungsdatensatz (KEINE Benutzer-ID\!).  
-- Enthält einen Zeitstempel, der angibt, wann der Einwilligungsdatensatz erstellt wurde.  
-- Wird eine bestehende Einwilligung geändert, wird ein neuer Einwilligungsdatensatz erstellt, der dann die ID eines nun veralteten früheren Einwilligungsdatensatzes enthält.  
-- Sie sind schwach identifizierend, da die zweimalige Vorlage desselben Einwilligungsdatensatzes (Einwilligungs-ID oder Zeitstempel) es ermöglicht, einen Endnutzer zwischen zwei Besuchen einer Website wiederzuerkennen; die Einwilligungsdatensätze selbst geben jedoch nur sehr geringe Einblicke in das Privatleben des Endnutzers.  
-- Wurden alle Zwecke abgelehnt, enthält der Einwilligungsdatensatz (Cookie) weder eine Einwilligungs-ID noch einen Zeitstempel. In diesem Fall ist der Einwilligungsdatensatz (Cookie) nicht identifizierend. Aus technischen Gründen wird er jedoch genauso geschützt wie die schwach identifizierenden Versionen.
+- Enthält eine eindeutige Einwilligungs-ID für den Consent Record (KEINE Benutzer-ID\!).  
+- Enthält einen Zeitstempel, der angibt, wann der Consent Record erstellt wurde.  
+- Wird eine bestehende Einwilligung geändert, wird ein neuer Consent Record erstellt, der dann die ID eines nun veralteten früheren Consent Recordss enthält.  
+- Sie sind schwach identifizierend, da die zweimalige Vorlage desselben Consent Recordss (Einwilligungs-ID oder Zeitstempel) es ermöglicht, einen Endnutzer zwischen zwei Besuchen einer Website wiederzuerkennen; die Consent Records selbst geben jedoch nur sehr geringe Einblicke in das Privatleben des Endnutzers.  
+- Wurden alle Zwecke abgelehnt, enthält der Consent Record (Browser Storage) weder eine Einwilligungs-ID noch einen Zeitstempel. In diesem Fall ist der Consent Record (Browser Storage) nicht identifizierend. Aus technischen Gründen wird er jedoch genauso geschützt wie die schwach identifizierenden Versionen.
 
 **2.2 Wie die Daten verarbeitet und gespeichert werden**
 
-- Einwilligungsdatensätze (Cookies) werden als Cookies im Browser eines Endnutzers gespeichert.  
-- Sie werden in verschlüsselter Form zwischen dem Einwilligungsbanner und der Website übertragen.  
-- SameSite=strict, d. h., das Cookie wird nicht automatisch an Websites von Drittanbietern gesendet.  
-- Das Cookie ist origingebunden, was bedeutet, dass nur die Website des Verantwortlichen darauf zugreifen kann.  
-- Das Cookie ist nicht „HttpOnly", was bedeutet, dass es von JavaScript gelesen werden kann, was für den Dienst technisch erforderlich ist.  
-- JavaScript außerhalb der Website des Verantwortlichen hat jedoch keinen Zugriff auf das Cookie. Nur die Website des Verantwortlichen kann auf das Cookie zugreifen.
+- Consent Records (Browser Storage) werden im Browser eines Endnutzers gespeichert.  
+- Sie werden in verschlüsselter Form zwischen dem Consent Banner und der Website übertragen.  
+- SameSite=strict, d. h., der Consent Record wird nicht automatisch an Websites von Drittanbietern gesendet.
+
+- Der Consent Record ist origin-gebunden, sodass nur die Webseite des Dienstanbieters auf den Consent Record zugreifen kann.
+
+- Der Consent Record kann zwar direkt aus dem JavaScript ausgelesen werden, dies ist allerdings technisch notwendig für den Dienst. JavaScript hat außerhalb der Dienstanbieter-Webseite keinen Zugriff auf den Consent Record. Nur die Dienstanbieter-Webseite kann auf den Consent Record zugreifen.
 
 **2.3 Wie lange die Daten gespeichert werden**
 
@@ -328,25 +329,25 @@ Das Cookie wird mit der maximal möglichen browser-spezifischen Dauer gespeicher
 
 ### 3\. Wie die Einwilligungsaufzeichnung eines Endnutzers im Einwilligungsspeicher des Verantwortlichen verarbeitet wird
 
-Der Verantwortliche benötigt zudem Zugriff auf die Einwilligungen eines Endnutzers, um die Rechtmäßigkeit der Verarbeitung seiner personenbezogenen Daten nachweisen zu können. Zu diesem Zweck erfasst L\&I alle Einwilligungsdatensätze (Hinweis: Diese Einwilligungen enthalten ausschließlich Einwilligungs-IDs, KEINE Nutzer-IDs, und können nicht miteinander verknüpft werden).
+Der Verantwortliche benötigt zudem Zugriff auf die Einwilligungen eines Endnutzers, um die Rechtmäßigkeit der Verarbeitung seiner personenbezogenen Daten nachweisen zu können. Zu diesem Zweck erfasst L\&I alle Consent Records (Hinweis: Diese Einwilligungen enthalten ausschließlich Einwilligungs-IDs, KEINE Nutzer-IDs, und können nicht miteinander verknüpft werden).
 
 **3.1 Erfasste personenbezogene Daten**
 
-Informationen zur Art der Einwilligungsdatensätze als personenbezogene Daten finden Sie im vorangegangenen Punkt. Bitte beachten Sie zudem die folgenden Besonderheiten:
+Informationen zur Art der Consent Records als personenbezogene Daten finden Sie im vorangegangenen Punkt. Bitte beachten Sie zudem die folgenden Besonderheiten:
 
-Es ist nicht möglich, die Einwilligungsdatensätze (Kundenspeicher) zu Nutzerprofilen zu verbinden, da KEINE Nutzer-IDs oder Quasi-Identifier gespeichert werden, die eine solche Verknüpfung erlauben. Aus Gründen der Datenminimierung werden auch KEINE Verweigerungen der Einwilligung gespeichert.
+Es ist nicht möglich, die Consent Records (Kundenspeicher) zu Nutzerprofilen zu verbinden, da KEINE Nutzer-IDs oder Quasi-Identifier gespeichert werden, die eine solche Verknüpfung erlauben. Aus Gründen der Datenminimierung werden auch KEINE Verweigerungen der Einwilligung gespeichert.
 
 **3.2 Wie die Daten verarbeitet und gespeichert werden**
 
-Einwilligungsdatensätze (Kundenspeicher) werden derzeit zentral in der Cloud bei L\&I als Teil des Einwilligungsdatensatzspeichers (Kundenspeicher) gespeichert und sind technisch und organisatorisch vor unbefugtem Zugriff geschützt, wodurch das Risiko eines Missbrauchs minimiert wird. Zu diesem Zweck wird derzeit Amazon Web Services (AWS) als Unterauftragsverarbeiter eingesetzt.
+Consent Records (Kundenspeicher) werden derzeit zentral in der Cloud bei L\&I als Teil des Consent Recordspeichers (Kundenspeicher) gespeichert und sind technisch und organisatorisch vor unbefugtem Zugriff geschützt, wodurch das Risiko eines Missbrauchs minimiert wird. Zu diesem Zweck wird derzeit Amazon Web Services (AWS) als Unterauftragsverarbeiter eingesetzt.
 
 **3.3 Wie lange die Daten aufbewahrt werden**
 
-Die Einwilligungsdatensätze werden so lange gespeichert, wie der Verantwortliche sie benötigt, um die Rechtmäßigkeit der Verarbeitung der personenbezogenen Daten seiner Endnutzer nachweisen zu können.
+Die Consent Records werden so lange gespeichert, wie der Verantwortliche sie benötigt, um die Rechtmäßigkeit der Verarbeitung der personenbezogenen Daten seiner Endnutzer nachweisen zu können.
 
 ### 4\. Wie die Voreinstellungen und Einwilligungen des Endnutzers verarbeitet werden, wenn dieser ein Nutzer des Consenter Einwilligungsagenten ist
 
-Ist der Endnutzer des Verantwortlichen ein Nutzer des Consenter Einwilligungsagenten, kann er in seinem Consenter Einwilligungsagenten die Zwecke voreinstellen, für die er die Verarbeitung seiner Daten beim Besuch der Website des Verantwortlichen oder einer anderen Website zulässt. Wenn ein Endnutzer die Website des Verantwortlichen mit seinem Consenter Einwilligungsagenten besucht, bietet ihm sein Agent die Möglichkeit, seine Einstellungen an das Datenschutzniveau der Website des Verantwortlichen anzupassen; unternimmt der Endnutzer nichts, sendet sein Agent seine Einstellungen nach einer kurzen Wartezeit an die Website des Verantwortlichen. Erteilt oder ändert ein Endnutzer seine Einwilligung im Einwilligungsbanner des Verantwortlichen, wird diese Einstellung an den Einwilligungsagenten des Endnutzers zurückgesendet. Wenn ein Endnutzer die Website des Verantwortlichen erneut besucht, sendet der Agent des Endnutzers dessen vorherige Einwilligung erneut an das Einwilligungsbanner des Verantwortlichen, um einen Abgleich mit den bisherigen Entscheidungen des Nutzers zu ermöglichen.
+Ist der Endnutzer des Verantwortlichen ein Nutzer des Consenter Einwilligungsagenten, kann er in seinem Consenter Einwilligungsagenten die Zwecke voreinstellen, für die er die Verarbeitung seiner Daten beim Besuch der Website des Verantwortlichen oder einer anderen Website zulässt. Wenn ein Endnutzer die Website des Verantwortlichen mit seinem Consenter Einwilligungsagenten besucht, bietet ihm sein Agent die Möglichkeit, seine Einstellungen an das Datenschutzniveau der Website des Verantwortlichen anzupassen; unternimmt der Endnutzer nichts, sendet sein Agent seine Einstellungen nach einer kurzen Wartezeit an die Website des Verantwortlichen. Erteilt oder ändert ein Endnutzer seine Einwilligung im Consent Banner des Verantwortlichen, wird diese Einstellung an den Einwilligungsagenten des Endnutzers zurückgesendet. Wenn ein Endnutzer die Website des Verantwortlichen erneut besucht, sendet der Agent des Endnutzers dessen vorherige Einwilligung erneut an das Consent Banner des Verantwortlichen, um einen Abgleich mit den bisherigen Entscheidungen des Nutzers zu ermöglichen.
 
 **4.1 Erfasste personenbezogene Daten**
 
@@ -354,7 +355,7 @@ Die Voreinstellungen zur Einwilligung eines Endnutzers enthalten insofern Inform
 
 Nach aktueller Einschätzung werden sie jedoch nicht als identifizierend (auch nicht schwach identifizierend) eingeschätzt, da die Voreinstellung zur Einwilligung keine eindeutige Kennung enthält und auch nicht genügend charakteristische Merkmale enthält, die als Quasi-Identifier fungieren könnten.
 
-Wenn ein Endnutzer im Einwilligungsbanner seine Einwilligung erteilt oder ändert, wird diese Einstellung an seinen Einwilligungsagenten zurückgesendet. Wenn ein Endnutzer die Website des Verantwortlichen erneut besucht, sendet sein Einwilligungsagent seine vorherige Einwilligung erneut an das Einwilligungsbanner des Verantwortlichen.
+Wenn ein Endnutzer im Consent Banner seine Einwilligung erteilt oder ändert, wird diese Einstellung an seinen Einwilligungsagenten zurückgesendet. Wenn ein Endnutzer die Website des Verantwortlichen erneut besucht, sendet sein Einwilligungsagent seine vorherige Einwilligung erneut an das Consent Banner des Verantwortlichen.
 
 **4.2 Wie die Daten verarbeitet und gespeichert werden**
 
@@ -398,7 +399,7 @@ L\&I verarbeitet anonymisierte Daten zur kontinuierlichen Verbesserung und Weite
 - Einwilligungsentscheidungen nach Zweck (z. B. Serviceverbesserung, zusätzliche Funktionen, Personalisierung der Website, Anpassung von Werbung)  
 - Frühere Einwilligungsentscheidungen nach Zweck  
 - Zwecke, für die die Einwilligung widerrufen wurde  
-- Version des Einwilligungsbanners  
+- Version des Consent Banners  
 - Zeitstempel des Ereignisses
 
 **6.2 Wie die Daten verarbeitet werden**
@@ -411,7 +412,7 @@ Um den Implementierungsleitfaden der CNIL zu befolgen, ist Matomo wie folgt konf
 - Es wird keine auf Benutzer-IDs basierende Messung verwendet.  
 - Es wird kein E-Commerce-Tracking verwendet.  
 - Heatmaps und Sitzungsaufzeichnungen sind deaktiviert.  
-- Im Einwilligungsbanner wurde zusätzlich eine Opt-Out-Option implementiert.
+- Im Consent Banner wurde zusätzlich eine Opt-Out-Option implementiert.
 
 **6.3 Wie lange werden die Daten aufbewahrt?**
 
@@ -437,7 +438,7 @@ Dabei ist der Stand der Technik zu beachten, das heißt, die jeweils auf dem Mar
 
 Die Feststellung des Stands der Technik setzt geeignete Methoden voraus, mit denen sich die Wirksamkeit der Umsetzung der informierten Einwilligung und damit auch die wirksamste Umsetzung messen und nachweisen lassen. Der Europäische Datenschutzausschuss (EDSA) stellt in seinen Guidelines 4/2019 on Article 25 Data Protection by Design and by Default klar, dass der Wirksamkeitsnachweis das zentrale Element von Art. 25 DSGVO darstellt. Er führt hierzu aus:
 
-„Zu diesem Zweck kann der Verantwortliche geeignete Leistungskennzahlen (KPI) festlegen, um die Wirksamkeit nachzuweisen. Eine Leistungskennzahl ist ein vom Verantwortlichen gewählter messbarer Wert, der aufzeigt, wie effektiv der Verantwortliche sein Datenschutzziel erreicht. Leistungskennzahlen können quantitativer Natur sein, wie beispielsweise der Prozentsatz von Fehlalarmen oder Falschnegativen, die Verringerung von Beschwerden oder die Verkürzung der Reaktionszeit, wenn betroffene Personen ihre Rechte ausüben; oder sie können qualitativer Natur sein, wie beispielsweise Leistungsbewertungen, die Verwendung von Bewertungsskalen oder Expertengutachten. Alternativ zu KPIs können Verantwortliche die wirksame Umsetzung der Grundsätze nachweisen, indem sie die Gründe für ihre Bewertung der Wirksamkeit der gewählten Maßnahmen und Garantien darlegen."
+> „Zu diesem Zweck kann der Verantwortliche geeignete Leistungskennzahlen (KPI) festlegen, um die Wirksamkeit nachzuweisen. Eine Leistungskennzahl ist ein vom Verantwortlichen gewählter messbarer Wert, der aufzeigt, wie effektiv der Verantwortliche sein Datenschutzziel erreicht. Leistungskennzahlen können quantitativer Natur sein, wie beispielsweise der Prozentsatz von Fehlalarmen oder Falschnegativen, die Verringerung von Beschwerden oder die Verkürzung der Reaktionszeit, wenn betroffene Personen ihre Rechte ausüben; oder sie können qualitativer Natur sein, wie beispielsweise Leistungsbewertungen, die Verwendung von Bewertungsskalen oder Expertengutachten. Alternativ zu KPIs können Verantwortliche die wirksame Umsetzung der Grundsätze nachweisen, indem sie die Gründe für ihre Bewertung der Wirksamkeit der gewählten Maßnahmen und Garantien darlegen."
 
 In den letzten 10 Jahren hat die Wissenschaft mit jeweils unterschiedlichen disziplinären Schwerpunkten – von User Experience und User Interface Design bis hin zu Forschung im Bereich Mensch-Computer-Interaktion, Psychologie, Verhaltensökonomie und Innovationsökonomie – ein vielfältiges Methodenset entwickelt, mit dem sich die Wirksamkeit bei der Umsetzung der informierten Einwilligung messen und nachweisen lässt.
 
@@ -475,7 +476,8 @@ Bisherige, nach Best Practice-Regeln gestaltete Cookie Banner sind nicht ausreic
 - **Informationsverteilung, Layout und Visualisierungen:** Website-Betreiber müssen die Informationen entsprechend ihrer Relevanz für die Nutzer auf mehrere Ebenen verteilen, um die Besucher ihrer Website nicht zu überfordern; die wichtigsten Informationen – vor allem Zwecke, Vorteile und Risiken – zuerst, in absteigender Reihenfolge. Dabei sind Privacy Icons und sonstige Visualisierungen zu nutzen.  
 - **Einbindung von Einwilligungsagenten:** Website-Betreiber müssen die Signale von Einwilligungsagenten einbinden, da deren Integration die Informiertheit der Einwilligung erheblich anhebt. Die Einholung bzw. Übergabe einer informierten Einwilligung mithilfe eines Agenten ist deutlich informierter und daher wirksamer als ohne Agent.
 
-**Randnotiz:** Die Einbindung von Einwilligungsagenten ist in § 26 TDDDG vorgesehen und wird aktuell auch auf EU-Ebene vorgeschlagen. Da Einwilligungsmechanismen, die Agenten einbinden, deutlich informierter sind als Einwilligungsmechanismen ohne Agent, und agenten-gestützte Mechanismen mittlerweile auf dem Markt verfügbar sind, stellen agenten-basierte Einwilligungen den neuen Stand der Technik dar. Eine Pflicht zur Einbindung von Agenten ergibt sich deshalb bereits aus Art. 25 DSGVO.
+>   
+> **Randnotiz:** Die Einbindung von Einwilligungsagenten ist in § 26 TDDDG vorgesehen und wird aktuell auch auf EU-Ebene vorgeschlagen. Da Einwilligungsmechanismen, die Agenten einbinden, deutlich informierter sind als Einwilligungsmechanismen ohne Agent, und agenten-gestützte Mechanismen mittlerweile auf dem Markt verfügbar sind, stellen agenten-basierte Einwilligungen den neuen Stand der Technik dar. Eine Pflicht zur Einbindung von Agenten ergibt sich deshalb bereits aus Art. 25 DSGVO.
 
 **2\. Datenminimierung, Art. 5 i.V.m. Art. 25 DSGVO**
 
@@ -485,7 +487,8 @@ Viele Website-Betreiber greifen für die Verarbeitung der personenbezogenen Date
 - **Werbezwecke des Technologieanbieters:** Manche Drittanbieter verarbeiten die Daten auch für eigene Werbezwecke. In diesem Fall müssen Website-Betreiber ihre Besucher darüber informieren und für diesen Zweck eine entsprechend informierte Einwilligung einholen. Ein pauschaler Verweis auf die Datenschutzerklärung des Drittanbieters, ohne auf dessen Verarbeitungszwecke hinzuweisen, ist nicht ausreichend.  
 - **Alternative Technologien:** Website-Betreiber müssen prüfen, ob sie eine Technologie verwenden können, die weniger Risiken für ihre Besucher verursacht, sofern die datenschutzriskantere Technologie nicht erforderlich ist. Die Tatsache, dass eine datenschutzriskantere Technologie die maktgängigste Technologie ist, begründet keine Erforderlichkeit.
 
-**Randnotiz:** Abgesehen von der wirksamen Umsetzung des Datenminierungsprinzips können Website-Betreiber durch die Wahl einer datenschutzfreundlicheren Technologie und ihrer datenschutzkonformen Konfiguration nicht nur ein höheres Vertrauen bei ihren Besuchern, sondern auch höhere Einwilligungsraten erzielen.
+>   
+> **Randnotiz:** Abgesehen von der wirksamen Umsetzung des Datenminierungsprinzips können Website-Betreiber durch die Wahl einer datenschutzfreundlicheren Technologie und ihrer datenschutzkonformen Konfiguration nicht nur ein höheres Vertrauen bei ihren Besuchern, sondern auch höhere Einwilligungsraten erzielen.
 
 **3\. Kontrollmöglichkeit, Art. 5, 6, 7 i.V.m. Art. 25 DSGVO**
 
@@ -504,7 +507,8 @@ Wiederkehrende Besucher müssen und dürfen nur über Änderungen im System des 
     
 - **Nachweis der Einwilligung:** Website-Betreiber müssen Besuchern einen Nachweis zur Verfügung stellen, ob und für welche Zwecke sie eine Einwilligung erhalten haben. Dafür bietet sich die Einbindung eines Einwilligungsagenten an, da durch diesen die Nutzer des Agenten einen zentralisierten und automatisierten Überblick erhalten, wem sie welche Einwilligungen erteilt haben. Gleich wirksame Alternativen sind genauso zulässig (vgl. etwa ISO/IEC TS 27560:2023 – Consent Records and Receipts).
 
-**Randnotiz:** Mit diesen Techniken können Website-Betreiber nicht nur kurzfristig, sondern auch langfristig über mehrere wiederkehrende Besuche hinweg ein höheres Vertrauen und damit höhere Einwilligungsraten erzielen.
+>   
+> **Randnotiz:** Mit diesen Techniken können Website-Betreiber nicht nur kurzfristig, sondern auch langfristig über mehrere wiederkehrende Besuche hinweg ein höheres Vertrauen und damit höhere Einwilligungsraten erzielen.
 
 **4\. Dokumentationspflichten und Signalintegrität der Einwilligung, Art. 5, 6, 7 i.V.m. Art. 32 DSGVO**
 
@@ -583,9 +587,9 @@ Maßnahmen, die sicherstellen, dass nachträglich überprüft und festgestellt w
 
 *Integrität von Einwilligungsdaten (neuer Stand der Technik – siehe zu Art. 25 DSGVO 4\)*
 
-Maßnahmen, die sicherstellen, dass Einwilligungsdatensätze nicht unbemerkt verändert werden können und dass ihre Echtheit nachträglich überprüft werden kann:
+Maßnahmen, die sicherstellen, dass Consent Records nicht unbemerkt verändert werden können und dass ihre Echtheit nachträglich überprüft werden kann:
 
-- Jeder Einwilligungsdatensatz wird zum Zeitpunkt seiner Erstellung mit einer kryptografischen digitalen Signatur (ECDSA, SHA-384) gesichert, wobei ein asymmetrischer Schlüssel verwendet wird, der in einem Hardware-Sicherheitsmodul gespeichert ist, aus dem der private Schlüssel nicht extrahiert werden kann. Die Signatur umfasst den gesamten Datensatz, sodass jede spätere Änderung – sei es des Zeitpunkts, der Domain oder der Einwilligungsentscheidung – diesen ungültig macht und somit nachweisbar ist. Die Signatur jedes Datensatzes kann jederzeit erneut überprüft werden; ein Datensatz, dessen Signatur nicht verifiziert werden kann, wird als ungültig behandelt.
+- Jeder Consent Record wird zum Zeitpunkt seiner Erstellung mit einer kryptografischen digitalen Signatur (ECDSA, SHA-384) gesichert, wobei ein asymmetrischer Schlüssel verwendet wird, der in einem Hardware-Sicherheitsmodul gespeichert ist, aus dem der private Schlüssel nicht extrahiert werden kann. Die Signatur umfasst den gesamten Datensatz, sodass jede spätere Änderung – sei es des Zeitpunkts, der Domain oder der Einwilligungsentscheidung – diesen ungültig macht und somit nachweisbar ist. Die Signatur jedes Datensatzes kann jederzeit erneut überprüft werden; ein Datensatz, dessen Signatur nicht verifiziert werden kann, wird als ungültig behandelt.
 
 **3\. Gewährleistung der Verfügbarkeit (Art. 32 Abs. 1 Buchstabe b DSGVO)**
 

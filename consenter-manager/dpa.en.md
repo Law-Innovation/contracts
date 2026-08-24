@@ -2,7 +2,7 @@
 slug: dpa
 locale: en
 title: Data Processing Agreement (DPA)
-version: 2026-06
+version: 2026-07
 ---
 
 # Data Processing Agreement (DPA)
@@ -253,7 +253,7 @@ The data processor is constantly working to develop increasingly effective techn
 
 **Data Processor** pursuant to Article 4(8) of the GDPR and within the meaning of this agreement is:
 
-Law & Innovation Technology GmbH Jungstr. 29 10247 Berlin
+> Law & Innovation Technology GmbH Jungstr. 29 10247 Berlin
 
 **Name, role and contact details of the contact person:** Prof. Dr Max von Grafenstein, Managing Director [max.grafenstein@law-innovation.tech](mailto:max.grafenstein@law-innovation.tech) Mobile: 0175/9992389
 
@@ -299,9 +299,9 @@ The data is stored and processed by AWS. The data controller's payment data is p
 
 The data is stored until the data controller amends it or deletes their account, unless legal provisions require the data to be stored for a longer period.
 
-### 2\. How consent data is processed in an end-user's browser cookie
+### 2\. How consent data is processed in an end-user's browser storage
 
-The storage of consent data in the end user's browser cookie serves the purpose of automatically transferring and applying previously granted or withheld consents when the end user visits the data controller's website again.
+The storage of consent data in the end user's browser storage serves the purpose of automatically transferring and applying previously granted or withheld consents when the end user visits the data controller's website again.
 
 **2.1 Personal data collected**
 
@@ -311,20 +311,19 @@ Consent records constitute personal data insofar as they document an end user's 
 - Contains a timestamp indicating when the consent record was created.  
 - If an existing consent record is amended, a new consent record is created, which then contains the ID of a previous consent record that is now out of date.  
 - They are weakly identifying, as the presentation of the same consent record (consent ID or timestamp) on two occasions makes it possible to recognise an end user between two visits to a website; however, the consent records themselves provide only very limited insights into the end user's private life.  
-- If all purposes have been declined, the consent record (cookie) contains neither a consent ID nor a timestamp. In this case, the consent record (cookie) is non-identifying. For technical reasons, however, it is protected in exactly the same way as the weakly identifying versions.
+- If all purposes have been declined, the consent record (browser storage) contains neither a consent ID nor a timestamp. In this case, the consent record (browser storage) is non-identifying. For technical reasons, however, it is protected in exactly the same way as the weakly identifying versions.
 
 **2.2 How the data is processed and stored**
 
-- Consent records (cookies) are stored as cookies in an end user's browser.  
+- Consent records are stored in the end user's browser storage.  
 - They are transmitted in encrypted form between the consent banner and the website.  
-- SameSite=strict, i.e. the cookie is not automatically sent to third-party websites.  
-- The cookie is origin-bound, meaning that only the controller's website can access it.  
-- The cookie is not 'HttpOnly', which means it can be read by JavaScript, as this is technically necessary for the service.  
-- However, JavaScript outside the data controller's website does not have access to the cookie. Only the data controller's website can access the cookie.
+- SameSite=strict, i.e. the consent record is not automatically sent to third-party websites.  
+- The consent record is origin-bound, meaning that only the controller's website can access it.  
+- The consent record can be read by JavaScript, as this is technically necessary for the service. However, JavaScript outside the data controller's website does not have access to the consent record. Only the data controller's website can access the consent record.
 
 **2.3 How long the data is stored**
 
-The cookie is stored for the maximum possible browser-specific duration (e.g. 400 days for Chrome and Firefox, and for a shorter period in Safari). A user can delete their consent cookie at any time by clearing their browser's cache.
+Consent records are stored until users erase it from their browser storage. Consent records can always be deleted by cleaning the browser storage. 
 
 ### 3\. How an end user's consent record is processed in the controller's consent store
 
@@ -437,7 +436,7 @@ In this context, the state of the art must be taken into account; that is to say
 
 Determining the state of the art requires suitable methods with which the effectiveness of the implementation of informed consent – and thus also the most effective implementation – can be measured and demonstrated. The European Data Protection Board (EDPB) clarifies in its Guidelines 4/2019 on Article 25: Data Protection by Design and by Default that demonstrating effectiveness is the central element of Article 25 of the GDPR. It states:
 
-"To this end, the controller may define appropriate key performance indicators (KPIs) to demonstrate effectiveness. A key performance indicator is a measurable value chosen by the controller that demonstrates how effectively the controller is achieving its data protection objective. Key performance indicators may be quantitative in nature, such as the percentage of false alarms or false negatives, a reduction in complaints, or a reduction in response times when data subjects exercise their rights; or they may be qualitative in nature, such as performance assessments, the use of rating scales or expert opinions. As an alternative to KPIs, data controllers may demonstrate the effective implementation of the principles by setting out the reasons for their assessment of the effectiveness of the measures and safeguards chosen."
+> "To this end, the controller may define appropriate key performance indicators (KPIs) to demonstrate effectiveness. A key performance indicator is a measurable value chosen by the controller that demonstrates how effectively the controller is achieving its data protection objective. Key performance indicators may be quantitative in nature, such as the percentage of false alarms or false negatives, a reduction in complaints, or a reduction in response times when data subjects exercise their rights; or they may be qualitative in nature, such as performance assessments, the use of rating scales or expert opinions. As an alternative to KPIs, data controllers may demonstrate the effective implementation of the principles by setting out the reasons for their assessment of the effectiveness of the measures and safeguards chosen."
 
 Over the past 10 years, the academic community – drawing on a variety of disciplinary perspectives, ranging from user experience and user interface design to research in human–computer interaction, psychology, behavioural economics and the economics of innovation – has developed a diverse set of methods for measuring and demonstrating the effectiveness of informed consent implementation.
 
@@ -475,7 +474,8 @@ Existing cookie banners designed in accordance with best practice guidelines do 
 - **Information organisation, layout and visualisations:** Website operators must organise information across multiple levels according to its relevance to users, so as not to overwhelm visitors to their website; the most important information – particularly purposes, benefits and risks – should be presented first, in descending order of importance. Privacy icons and other visualisations should be used for this purpose.  
 - **Incorporation of consent agents:** Website operators must incorporate signals from consent agents, as their integration significantly enhances the level of informed consent. Obtaining or providing informed consent with the aid of an agent is significantly more informed and therefore more effective than without an agent.
 
-**Side note:** The integration of consent agents is provided for in Section 26 of the TDDDG and is currently also being proposed at EU level. As consent mechanisms that incorporate agents are significantly more informed than those without an agent, and agent-supported mechanisms are now available on the market, agent-based consent represents the new state of the art. An obligation to incorporate agents therefore already arises from Article 25 of the GDPR.
+>   
+> **Side note:** The integration of consent agents is provided for in Section 26 of the TDDDG and is currently also being proposed at EU level. As consent mechanisms that incorporate agents are significantly more informed than those without an agent, and agent-supported mechanisms are now available on the market, agent-based consent represents the new state of the art. An obligation to incorporate agents therefore already arises from Article 25 of the GDPR.
 
 **2\. Data minimisation, Article 5 in conjunction with Article 25 of the GDPR**
 
@@ -485,7 +485,8 @@ Many website operators rely on third-party technologies to process their visitor
 - **The technology provider's advertising purposes:** Some third-party providers also process data for their own advertising purposes. In this case, website operators must inform their visitors of this and obtain informed consent for this specific purpose. A general reference to the third-party provider's privacy policy, without specifying its processing purposes, is not sufficient.  
 - **Alternative technologies:** Website operators must assess whether they can use a technology that poses fewer risks to their visitors, provided that the technology posing greater privacy risks is not necessary. The fact that a technology posing greater privacy risks is the most widely used does not constitute a necessity.
 
-**Side note:** Apart from the effective implementation of the data minimisation principle, by choosing a more privacy-friendly technology and configuring it in a manner that complies with data protection regulations, website operators can not only build greater trust among their visitors but also achieve higher consent rates.
+>   
+> **Side note:** Apart from the effective implementation of the data minimisation principle, by choosing a more privacy-friendly technology and configuring it in a manner that complies with data protection regulations, website operators can not only build greater trust among their visitors but also achieve higher consent rates.
 
 **3\. Ability to exercise control, Articles 5, 6 and 7 in conjunction with Article 25 of the GDPR**
 
@@ -504,7 +505,8 @@ Returning visitors must and may only be informed of changes to the website opera
     
 - **Proof of consent:** Website operators must provide visitors with proof of whether and for what purposes they have obtained consent. Integrating a consent management tool is a suitable way of doing this, as it provides the tool's users with a centralised and automated overview of to whom they have granted which consents. Equally effective alternatives are also permissible (see, for example, ISO/IEC TS 27560:2023 – Consent Records and Receipts).
 
-**Side note:** By using these techniques, website operators can achieve greater trust – and thus higher consent rates – not only in the short term but also in the long term across multiple repeat visits.
+>   
+> **Side note:** By using these techniques, website operators can achieve greater trust – and thus higher consent rates – not only in the short term but also in the long term across multiple repeat visits.
 
 **4\. Documentation requirements and signal integrity of consent, Articles 5, 6 and 7 in conjunction with Article 32 of the GDPR**
 
