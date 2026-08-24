@@ -1,3 +1,10 @@
+---
+slug: tos
+locale: en
+title: General Terms & Conditions
+version: 2025-12
+---
+
 # General Terms & Conditions
 
 ## For Using the Consenter Manager and Consenter Banner (to communicate with the Consenter Agent)

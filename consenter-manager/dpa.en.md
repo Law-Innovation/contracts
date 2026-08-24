@@ -1,3 +1,10 @@
+---
+slug: dpa
+locale: en
+title: Data Processing Agreement
+version: 2025-12
+---
+
 # Data Processing Agreement
 
 ## Between Consenter and Customer (Website Provider)
